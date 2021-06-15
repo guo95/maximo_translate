@@ -1,0 +1,493 @@
+
+source:false-JA;target:偽
+source:true-JA;target:真
+source:password-JA;target:パスワード
+source:false-ZH;target:假
+source:true-ZH;target:是的
+source:password-ZH;target:密码
+source:Indicates if work log exists for the assignment.-JA;target:代入の作業ログが存在するかどうかを示します。
+source:WORKLOG-JA;target:仕事をする
+source:Indicates if work log exists for the assignment.-ZH;target:指示分配是否存在工作日志。
+source:WORKLOG-ZH;target:工作
+source:Clear-JA;target:クリア
+source:Symbol   Meaning                 Presentation        Example\n------   -------                 ------------        -------\nG        era designator          (Text)              AD\ny        year                    (Number)            1996\nM        month in year           (Text and Number)     July and 07\nd        day in month            (Number)            10\nh        hour in am/pm (1-12)    (Number)            12\nH        hour in day (0-23)      (Number)            0\nm        minute in hour          (Number)            30\ns        second in minute        (Number)            55\nS        millisecond             (Number)            978\nE        day in week             (Text)              Tuesday\nD        day in year             (Number)            189\nF        day of week in month    (Number)            2 (2nd Wed in July)\nw        week in year            (Number)            27\nW        week in month           (Number)            2\na        am/pm marker            (Text)              PM\nk        hour in day (1-24)      (Number)            24\nK        hour in am/pm (0-11)    (Number)            0\nz        time zone               (Text)              Pacific Standard Time\n'        escape for text         (Delimiter)\n\"        single quote            (Literal)           '\n-JA;target:シンボルの意味を示します。午前10時00分（番号）0分23分（番号）30秒の分（数）分（数）55 \ ns火曜日の1日（数字）は189日曜日（数）2（第2日）7月第二週（番号）27週（番号）27 \ nW週（番号）2 \ na am / pmマーカー（テキスト）pm \ nk時間( number ) am / pm ( 0 - 11 ) ( 0 ) 0 \ nzタイムゾーン( text )太平洋標準時間\ n 'エスケープテキスト（区切り記号）\ n \“単価（リテラル）”\ n
+source:<tr><td class="buyer_hdr1">MAXIMO Procurement Solutions</td></tr> <tr><td class="buyer_text">You can use these additional Maximo features to communicate with your vendors, in real time, and streamline your purchasing experience.</td></tr> <tr><td>&nbsp;</td></tr> <tr><td> <table width="96%" border="0" cellspacing="0" cellpadding="2" align="right"> <tr valign="top"> <td nowrap class="buyer_hdr2" align="right">Maximo Workflow -</td> <td class="buyer_text">Dynamically define and manage your purchasing processes and employee notification.</td> </tr> <tr valign="top"> <td nowrap class="buyer_hdr2" align="right">Desktop Requisitions -</td> <td class="buyer_text">Search and request materials from Internet storerooms, suppliers' online catalogs, and electronic commerce sites and marketplaces.</td> </tr> <tr valign="top"> <td nowrap class="buyer_hdr2" align="right">Maximo e-Commerce Adapter -</td> <td class="buyer_text">Send and receive real time transactions with suppliers, partners, and marketplaces.</td> </tr> <tr valign="top"> <td nowrap class="buyer_hdr2" align="right">Maximo OCS -</td> <td class="buyer_text">Extend Maximo procurement communication to your suppliers with Maximo Online Commerce Services.</td> </tr> </table> </td></tr> <tr><td>&nbsp;</td></tr>-JA;target:< tt >< td class =" buyersure hdr 1 "> Maximum Pocket Resolution </ td > < tr >< tr >< td class " buyerchen text " >これらの付加的な最大機能を使用して、ベンダーと通信し、購買経験を合理化することができます。TD > < tt /< tr >< td >< td >< table width =" 96 %" border = 0 " alspacing =" right " > " This NowRAP class = " buyerlose hdr 2 " align = " right " > maximo workflow -< td > < tt class =" buyerchen text ">購買プロセスと従業員通知を動的に定義し管理するインターネットStorageoms、サプライヤーのオンラインカタログからの検索と要求材料。そして、電子商取引サイトと市場は電子商取引サイトと市場です。また、最大のオンラインコマースサービスによってあなたの供給元に最大限の購買コミュニケーションを拡張しますTD > < tr >
+source:Register for Maximo OCS.-JA;target:Maximo OCSに登録します。
+source:Offset-JA;target:オフセット
+source:Measure-JA;target:処置
+source:Z Ref-JA;target:z ref
+source:Y Ref-JA;target:y ref
+source:新建工单-JA;target:新しいシート
+source:And-JA;target:And
+source:)-JA;target:)
+source:+-JA;target:＋
+source:In-JA;target:イン
+source:--JA;target:を選択します。
+source:*-JA;target:＊
+source:STDDEV-JA;target:標準偏差
+source:=-JA;target:を選択します。
+source:Like-JA;target:ライク
+source:(-JA;target:(
+source:Not-JA;target:ない
+source:AVG-JA;target:平均値
+source:<>-JA;target:<>
+source:Is Not Null-JA;target:がNULLでない
+source:>-JA;target:>
+source:/-JA;target:を選択します。
+source:Between-JA;target:の間
+source:SQRT-JA;target:SQRT会社
+source:<-JA;target:<>
+source:Asset-JA;target:資産
+source:Deployed Asset Details-JA;target:展開資産詳細
+source:OK-JA;target:OK
+source:Site-JA;target:サイト
+source:Linked Node ID-JA;target:リンクノードID
+source:Reconciliation Differences-JA;target:和解の違い
+source:Asset Attribute-JA;target:資産属性
+source:DPA Attribute-JA;target:DPA属性
+source:Deployed Asset Value-JA;target:資産価値
+source:Unit-JA;target:ユニット
+source:Reconciliation Message-JA;target:和解メッセージ
+source:Reconciliation Date-JA;target:和解日付
+source:Asset Value-JA;target:資産価値
+source:Asset Specification-JA;target:資産仕様
+source:Aln Value-JA;target:AlN値
+source:Favorite Applications-JA;target:好きなアプリケーション
+source:Count Frequency-JA;target:カウント頻度
+source:ABC Type-JA;target:ABCタイプ
+source:ABC Analysis-JA;target:ABC分析
+source:Show Detail-JA;target:詳細を見る
+source:Submit-JA;target:提出する
+source:Cancel-JA;target:取り消し
+source:Attributes-JA;target:属性
+source:Details-JA;target:詳細
+source:创建通知-JA;target:通知の作成
+source:Refresh Status-JA;target:ステータスを更新する
+source:Turn Admin Mode OFF-JA;target:管理モードをオフにする
+source:Cancel Admin Mode-JA;target:管理モードを取り消す
+source:Excluded Password List-JA;target:除外パスワードリスト
+source:New Row-JA;target:新しい列
+source:Is Null-JA;target:がNULL
+source:Or-JA;target:Or
+source:>=-JA;target:>=
+source:<=-JA;target:<=
+source:MAX-JA;target:マックス
+source:Turn Admin Mode ON-JA;target:アドオンモードをオンにする
+source:Update Properties-JA;target:プロパティの更新
+source:EXP-JA;target:経験値
+source:MIN-JA;target:分
+source:More Information-JA;target:詳細情報
+source:User Defaults-JA;target:ユーザのデフォルト
+source:Login Tracking-JA;target:ログイン追跡
+source:Automatic Password Generation-JA;target:自動パスワード生成
+source:Always E-mail Generated Passwords to Users (Never Display On Screen)-JA;target:常に電子メールは、ユーザーにパスワードを生成（画面上に表示されません）
+source:Password Generation Display-JA;target:パスワード生成ディスプレイ
+source:Allow Generated Passwords to Be Displayed On Screen-JA;target:生成されたパスワードを画面に表示する
+source:Password Requirements-JA;target:パスワード要件
+source:Required Password Characters-JA;target:必須パスワード文字
+source:Allowed Placement of Password Characters-JA;target:パスワード文字の許可
+source:BIRT Reports-JA;target:バートレポート
+source:Select Row {0}-JA;target:行{ 0 }を選択
+source:Quick Insert-JA;target:クイックインサート
+source:Go To %1-JA;target:% 1に移動
+source:Bulletin Board-JA;target:掲示板です
+source:KPI Graph-JA;target:KPIグラフ
+source:新建服务请求-JA;target:新規サービス要求
+source:KPI List-JA;target:KPI一覧
+source:administrator-JA;target:管理者
+source:Role ID-JA;target:役割ID
+source:Inbox / Assignments-JA;target:インボックス
+source:Non-Accept Message-JA;target:非承諾メッセージ
+source:Owner Table-JA;target:オーナーテーブル
+source:Assignee Relationship-JA;target:譲受人関係
+source:Time Limit-JA;target:時間制限
+source:Extra Field 2-JA;target:エクストラフィールド2
+source:Extra Field 1-JA;target:エキストラフィールド1
+source:Custom Class-JA;target:カスタムクラス
+source:Extra Field 5-JA;target:エキストラフィールド5
+source:Last Memo-JA;target:最後のメモ
+source:Extra Field 4-JA;target:エクストラフィールド4
+source:Extra Field 3-JA;target:エクストラフィールド3
+source:Current Memo-JA;target:現在のメモ
+source:Separate Groups-JA;target:別グループ
+source:Owner ID-JA;target:オーナーID
+source:Group #-JA;target:グループ
+source:WFASSIGNMENTID-JA;target:仕事の割り当て
+source:Locked By-JA;target:ロック
+source:Accept Expression-JA;target:表現を受け入れる
+source:Condition Class-JA;target:コンディションクラス
+source:Assignment Status-JA;target:割り当てステータス
+source:Due Date-JA;target:期限
+source:Assignment-JA;target:代入
+source:Expression-JA;target:表現
+source:Has Long Description-JA;target:説明が長い
+source:Calendar Based-JA;target:カレンダーベース
+source:Owner Description-JA;target:所有者説明
+source:Application-JA;target:アプリケーション
+source:Node ID-JA;target:ノードID
+source:Assigned Person Code-JA;target:割り当て人物コード
+source:Send E-mail-JA;target:メール送信
+source:Process Revision-JA;target:工程改正
+source:Original Assignee-JA;target:原作者
+source:Language Code-JA;target:言語コード
+source:Start Date-JA;target:開始日
+source:Description-JA;target:説明
+source:Workflow ID-JA;target:ワークフローID
+source:Object-JA;target:オブジェクト
+source:Process-JA;target:プロセス
+source:Display One-JA;target:ディスプレイワン
+source:Condition Code-JA;target:条件コード
+source:Preserve Original Assignment when Delegating-JA;target:委任時に元の代入を保存する
+source:Is Owner Locked-JA;target:所有者ロック
+source:Host Name-JA;target:ホスト名
+source:Escalation Role-JA;target:エスカレーションロール
+source:Communication Template-JA;target:コミュニケーションテンプレート
+source:Priority-JA;target:優先度
+source:Reschedule-JA;target:再スケジューリング
+source:Reschedule Work-JA;target:再編成作業
+source:The selected work is outside of the work list's date range.-JA;target:選択された作業は、作業リストの日付範囲外です。
+source:Select a date within the work list's start and end dates or expand the work list's date range.-JA;target:作業リストの開始日と終了日の日付を選択したり、ワークリストの日付範囲を展開します。
+source:Adjust Crew Assignments-JA;target:乗組員割り当て
+source:To change the resource assignments in the crew, select the appropriate criteria and click Next.-JA;target:乗組員のリソース割り当てを変更するには、適切な基準を選択し、「次へ」をクリックします。
+source:with Asset-JA;target:資産で
+source:Remove-JA;target:取り外し
+source:Next-JA;target:次
+source:Replace-JA;target:置換
+source:Temporarily Replace Asset-JA;target:一時的に資産を交換する
+source:Remove from-JA;target:から取り除く
+source:Temporarily-JA;target:一時的
+source:Permanently Remove Labor-JA;target:労働を永久に取り除く
+source:Name-JA;target:名称
+source:Permanently Replace Labor-JA;target:永久交換労働
+source:Permanently Add Labor-JA;target:永久労働を加える
+source:Labor-JA;target:労働
+source:Temporarily Add Asset-JA;target:一時的に資産を追加する
+source:Temporarily Replace Labor-JA;target:一時的に交代労働
+source:Remove till-JA;target:まで
+source:Tools-JA;target:工具
+source:Temporarily Remove Labor-JA;target:一時的に労働を取り除く
+source:Close-JA;target:クローズ
+source:Permanently Remove Asset-JA;target:永久資産を取り除く
+source:Permanently Replace Asset-JA;target:永久に資産を交換する
+source:Add-JA;target:追加
+source:Permanently Add Asset-JA;target:永久資産を追加する
+source:Permanently-JA;target:永久に
+source:Temporarily Add Labor-JA;target:一時的に労働を加える
+source:with Labor-JA;target:労働で
+source:Temporarily Remove Asset-JA;target:一時的に資産を除去する
+source:Tool-JA;target:工具
+source:Clear-ZH;target:清除
+source:Symbol   Meaning                 Presentation        Example\n------   -------                 ------------        -------\nG        era designator          (Text)              AD\ny        year                    (Number)            1996\nM        month in year           (Text and Number)     July and 07\nd        day in month            (Number)            10\nh        hour in am/pm (1-12)    (Number)            12\nH        hour in day (0-23)      (Number)            0\nm        minute in hour          (Number)            30\ns        second in minute        (Number)            55\nS        millisecond             (Number)            978\nE        day in week             (Text)              Tuesday\nD        day in year             (Number)            189\nF        day of week in month    (Number)            2 (2nd Wed in July)\nw        week in year            (Number)            27\nW        week in month           (Number)            2\na        am/pm marker            (Text)              PM\nk        hour in day (1-24)      (Number)            24\nK        hour in am/pm (0-11)    (Number)            0\nz        time zone               (Text)              Pacific Standard Time\n'        escape for text         (Delimiter)\n\"        single quote            (Literal)           '\n-ZH;target:符号含义表示示例\n-------------------\nG纪元指示符（文本）AD\ny year（Number）1996\nM month in year（文本和数字）July and 07\nd day in month（Number）上午/下午10\nh小时（1-12）（数字）12\nh小时（0-23）（数字）0\nm分钟（数字）30\ns秒（数字）55\ns毫秒（数字）978\n一周中的一天（文本）星期二\n年中的第二天（数字）189 \n月中的星期几（数字）2（7月的第二个星期三）\n年中的星期二（数字）27 \n月中的星期二（数字）2 \n上午/下午标记（文本）下午\n天中的小时（1-24）（Number）24\n上午/下午24小时（0-11）（Number）0\nz时区（Text）太平洋标准时间\n'文本转义符（分隔符）\n\“单引号（文字）”\n
+source:<tr><td class="buyer_hdr1">MAXIMO Procurement Solutions</td></tr> <tr><td class="buyer_text">You can use these additional Maximo features to communicate with your vendors, in real time, and streamline your purchasing experience.</td></tr> <tr><td>&nbsp;</td></tr> <tr><td> <table width="96%" border="0" cellspacing="0" cellpadding="2" align="right"> <tr valign="top"> <td nowrap class="buyer_hdr2" align="right">Maximo Workflow -</td> <td class="buyer_text">Dynamically define and manage your purchasing processes and employee notification.</td> </tr> <tr valign="top"> <td nowrap class="buyer_hdr2" align="right">Desktop Requisitions -</td> <td class="buyer_text">Search and request materials from Internet storerooms, suppliers' online catalogs, and electronic commerce sites and marketplaces.</td> </tr> <tr valign="top"> <td nowrap class="buyer_hdr2" align="right">Maximo e-Commerce Adapter -</td> <td class="buyer_text">Send and receive real time transactions with suppliers, partners, and marketplaces.</td> </tr> <tr valign="top"> <td nowrap class="buyer_hdr2" align="right">Maximo OCS -</td> <td class="buyer_text">Extend Maximo procurement communication to your suppliers with Maximo Online Commerce Services.</td> </tr> </table> </td></tr> <tr><td>&nbsp;</td></tr>-ZH;target:<tr><td class=“买方hdr1”>MAXIMO采购解决方案</td></tr><tr><td class=“买方文本”>您可以使用这些额外的MAXIMO功能与供应商进行实时沟通，简化您的采购体验。</td></tr><tr><td></td></tr><tr><td><table width=“96%”border=“0”cellspacing=“0”cellpadding=“2”align=“right”><tr valign=“top”><td nowrap class=“buyer\u hdr2”align=“right”>Maximo工作流-</td><td class=“buyer\u text”>动态定义和管理您的采购流程和员工通知。</td><tr valign=“top”><td nowrap class=“buyer\u hdr2”align=“right”>桌面请购单-</td><td class=“buyer\u text”>从互联网仓库、供应商的在线目录中搜索和请求材料，以及电子商务网站和市场。</td></tr><tr valign=“top”><td nowrap class=“buyer\u hdr2”align=“right”>Maximo电子商务适配器-</td><td class=“buyer\u text”>发送和接收与供应商、合作伙伴的实时交易，和市场。</td></tr><tr valign=“top”><td nowrap class=“买方hdr2”align=“right”>Maximo OCS-</td><td class=“买方文本”>通过Maximo在线商务服务将Maximo采购沟通扩展到您的供应商。</td></tr></table></td></tr><td></td></tr>
+source:Register for Maximo OCS.-ZH;target:注册Maximo OCS。
+source:Offset-ZH;target:抵消
+source:Measure-ZH;target:测量
+source:Z Ref-ZH;target:Z参考
+source:Y Ref-ZH;target:Y参考
+source:And-ZH;target:以及
+source:)-ZH;target:)
+source:+-ZH;target:+
+source:In-ZH;target:在
+source:--ZH;target:-
+source:*-ZH;target:*
+source:STDDEV-ZH;target:标准偏差
+source:=-ZH;target:=
+source:Like-ZH;target:就像
+source:(-ZH;target:(
+source:Not-ZH;target:不是
+source:AVG-ZH;target:平均值
+source:<>-ZH;target:<>
+source:Is Not Null-ZH;target:不为空
+source:>-ZH;target:>
+source:/-ZH;target:/
+source:Between-ZH;target:介于
+source:SQRT-ZH;target:SQRT公司
+source:<-ZH;target:<
+source:Asset-ZH;target:资产
+source:Deployed Asset Details-ZH;target:部署的资产详细信息
+source:OK-ZH;target:好的
+source:Site-ZH;target:地点
+source:Linked Node ID-ZH;target:链接节点ID
+source:Reconciliation Differences-ZH;target:对账差异
+source:Asset Attribute-ZH;target:资产属性
+source:DPA Attribute-ZH;target:DPA属性
+source:Deployed Asset Value-ZH;target:部署资产价值
+source:Unit-ZH;target:单位
+source:Reconciliation Message-ZH;target:对账报文
+source:Reconciliation Date-ZH;target:对账日期
+source:Asset Value-ZH;target:资产价值
+source:Asset Specification-ZH;target:资产规格
+source:Aln Value-ZH;target:Aln值
+source:Count Frequency-ZH;target:计数频率
+source:ABC Type-ZH;target:ABC类型
+source:ABC Analysis-ZH;target:ABC分析
+source:Show Detail-ZH;target:显示详细信息
+source:Submit-ZH;target:提交
+source:Cancel-ZH;target:取消
+source:Attributes-ZH;target:属性
+source:Details-ZH;target:细节
+source:Refresh Status-ZH;target:刷新状态
+source:Turn Admin Mode OFF-ZH;target:关闭管理模式
+source:Cancel Admin Mode-ZH;target:取消管理模式
+source:Excluded Password List-ZH;target:排除的密码列表
+source:New Row-ZH;target:新行
+source:Is Null-ZH;target:为空
+source:Or-ZH;target:或者
+source:>=-ZH;target:>=
+source:<=-ZH;target:<=
+source:MAX-ZH;target:马克斯
+source:Turn Admin Mode ON-ZH;target:打开管理模式
+source:Update Properties-ZH;target:更新属性
+source:EXP-ZH;target:经验
+source:MIN-ZH;target:最小
+source:More Information-ZH;target:更多信息
+source:User Defaults-ZH;target:用户默认
+source:Login Tracking-ZH;target:登录跟踪
+source:Automatic Password Generation-ZH;target:自动生成密码
+source:Always E-mail Generated Passwords to Users (Never Display On Screen)-ZH;target:始终通过电子邮件将生成的密码发送给用户（从不在屏幕上显示）
+source:Password Generation Display-ZH;target:密码生成显示
+source:Allow Generated Passwords to Be Displayed On Screen-ZH;target:允许在屏幕上显示生成的密码
+source:Password Requirements-ZH;target:密码要求
+source:Required Password Characters-ZH;target:必需的密码字符
+source:Allowed Placement of Password Characters-ZH;target:允许放置密码字符
+source:BIRT Reports-ZH;target:BIRT报告
+source:Select Row {0}-ZH;target:选择行{0}
+source:Go To %1-ZH;target:转到%1
+source:Reschedule-ZH;target:重新安排
+source:Reschedule Work-ZH;target:重新安排工作
+source:The selected work is outside of the work list's date range.-ZH;target:所选工作超出了工作列表的日期范围。
+source:Select a date within the work list's start and end dates or expand the work list's date range.-ZH;target:在工作列表的开始和结束日期内选择一个日期，或展开工作列表的日期范围。
+source:Adjust Crew Assignments-ZH;target:调整机组分配
+source:Description-ZH;target:说明
+source:To change the resource assignments in the crew, select the appropriate criteria and click Next.-ZH;target:要更改工作组中的资源分配，请选择适当的条件并单击“下一步”。
+source:with Asset-ZH;target:有资产
+source:Remove-ZH;target:删除
+source:Next-ZH;target:下一个
+source:Replace-ZH;target:替换
+source:Temporarily Replace Asset-ZH;target:临时替换资产
+source:Remove from-ZH;target:从中删除
+source:Temporarily-ZH;target:暂时
+source:Permanently Remove Labor-ZH;target:永久移除劳动力
+source:Name-ZH;target:姓名
+source:Permanently Replace Labor-ZH;target:永久替换劳动力
+source:Permanently Add Labor-ZH;target:永久性增加劳动力
+source:Labor-ZH;target:劳动
+source:Temporarily Add Asset-ZH;target:临时添加资产
+source:Temporarily Replace Labor-ZH;target:临时代替人工
+source:Remove till-ZH;target:移走直到
+source:Tools-ZH;target:工具
+source:Temporarily Remove Labor-ZH;target:临时解除劳动
+source:Close-ZH;target:关闭
+source:Permanently Remove Asset-ZH;target:永久删除资产
+source:Permanently Replace Asset-ZH;target:永久替换资产
+source:Add-ZH;target:添加
+source:Permanently Add Asset-ZH;target:永久添加资产
+source:Permanently-ZH;target:永久地
+source:Temporarily Add Labor-ZH;target:临时增加人工
+source:with Labor-ZH;target:劳动
+source:Temporarily Remove Asset-ZH;target:临时删除资产
+source:Tool-ZH;target:工具
+source:1-JA;target:1
+source:0-JA;target:0
+source:all-JA;target:すべて
+source:15-JA;target:15
+source:JOBPLAN-JA;target:仕事をする
+source:SELF-JA;target:自己
+source:LABOR:CRAFT-JA;target:レイバークラフト
+source:SELF:CRAFT-JA;target:セルフクラフト
+source:LABREP-JA;target:ラピュレット
+source:docinfo.description-JA;target:文書情報の説明
+source:LOCATION-JA;target:ロケーション
+source:MASTERPM:ITEM-JA;target:MASTER RPM:プロジェクト
+source:SELF:ITEM-JA;target:self : item
+source:337-JA;target:337
+source:512-JA;target:512
+source:687-JA;target:687
+source:862-JA;target:862
+source:142-JA;target:142
+source:254-JA;target:254
+source:PERSON-JA;target:人
+source:PERSONGR-JA;target:松をさす
+source:PM:ASSET:LOCATION:MASTERPM-JA;target:PM：資産：場所：マスターPM
+source:SELF:ASSET:LOCATIONS:MASTERPM-JA;target:自己：資産：場所：マスター
+source:PO:COMPANY-JA;target:ポー：会社
+source:SELF:VENDOR-JA;target:自己:ベンダー
+source:PR:COMPANY-JA;target:PR会社
+source:PRECAUTN-JA;target:前庭
+source:PROBLEM-JA;target:問題
+source:SELF:COMPANIES-JA;target:自己株式会社
+source:QUAL-JA;target:品質
+source:QUICKREP:ASSET:LOCATION:JOBPLAN:SAFEPLAN:PM-JA;target:Quickrep：資産：場所：Jobplan：Safeplan：PM
+source:SELF:ASSET:LOCATION:JOBPLAN:WOSAFETYPLAN.SAFETYPLAN:CONTRACT:PM-JA;target:自己：資産：場所：Jobplan：Wosafetyplan
+source:RECEIPTS-JA;target:領収書
+source:RELEASE:ASSET:LOCATION:JOBPLAN:SAFEPLAN:PM-JA;target:リリース：資産：場所：Jobplan：Safeplan：PM
+source:RFQ:COMPANY-JA;target:株式会社RFQ
+source:SELF:RFQVENDOR.COMPANIES-JA;target:自己紹介
+source:ROUTES-JA;target:路線
+source:SAFEPLAN-JA;target:安全計画
+source:SOLUTION-JA;target:解決策
+source:SR-JA;target:SR
+source:40-JA;target:40
+source:380-JA;target:380
+source:TAGLOCKS:ASSET:LOCATION-JA;target:タグ：資産：ロケーション
+source:SELF:ASSET:LOCATIONS-JA;target:自己：資産：場所
+source:TKTEMPLATE-JA;target:テンプレート
+source:TOOL-JA;target:工具
+source:30000-JA;target:30000
+source:WOTRACK:ASSET:LOCATION:JOBPLAN:SAFEPLAN:PM-JA;target:Wotrack:Aspset:Location:Jobplan:Safeplan:PM
+source:20-JA;target:20
+source:10-JA;target:10
+source:80-JA;target:80
+source:maximo-JA;target:最大値
+source:This is a property. The value is maximo for the property mxe.system.reguser-JA;target:これはプロパティです。値はプロパティmx . system . reguserの最大値です
+source:200-JA;target:200
+source:TRUE-JA;target:真
+source:ASSET:LOCATION-JA;target:資産場所
+source:SELF:LOCATION-JA;target:セルフロケーション
+source:]-JA;target:」
+source:CALENDAR-JA;target:カレンダー
+source:CHANGE:ASSET:LOCATION:JOBPLAN:SAFEPLAN:PM-JA;target:変更：資産：場所：ジョブス
+source:COMPANY-JA;target:カンパニー
+source:COND:ASSET:LOCATION:PM-JA;target:条件：資産：場所：PM
+source:SELF:ASSET:LOCATION:PM-JA;target:自己：資産：場所：PM
+source:CRAFT-JA;target:クラフト
+source:CREWTYPE-JA;target:クルー型
+source:2000-JA;target:2000
+source:FAILURE-JA;target:故障
+source:HAZARDS-JA;target:危険
+source:IAS:INVENTOR-JA;target:国際会計準則：発明者
+source:SELF:INVENTORY-JA;target:セルフインベントリ
+source:INCIDENT-JA;target:事件
+source:INVENTOR:HAZARDS-JA;target:発明者：危険
+source:SELF:HAZARD-JA;target:セルフハザード
+source:INVISSUE-JA;target:コンタクトレンズ
+source:INVOICE:PO:COMPANY-JA;target:請求書：ポー：会社
+source:SELF:PO:COMPANIES-JA;target:自己: PO :企業
+source:ITEM-JA;target:アイテム
+source:PLUSCLOC-JA;target:プロス科
+source:The selected date is outside of the work list's date range. Select a date within the work list's start and end dates.-JA;target:選択した日付は、作業リストの日付範囲の外側にあります。作業リストの開始日と終了日の日付を選択します。
+source:1-ZH;target:1
+source:0-ZH;target:0
+source:all-ZH;target:全部的
+source:15-ZH;target:15
+source:JOBPLAN-ZH;target:工作
+source:SELF-ZH;target:自我
+source:LABOR:CRAFT-ZH;target:劳动：手艺
+source:SELF:CRAFT-ZH;target:自我：工艺
+source:LABREP-ZH;target:拉布雷普
+source:docinfo.description-ZH;target:文档信息说明
+source:LOCATION-ZH;target:位置
+source:MASTERPM:ITEM-ZH;target:MASTERPM:项目
+source:SELF:ITEM-ZH;target:自身：项目
+source:337-ZH;target:337
+source:512-ZH;target:512
+source:687-ZH;target:687
+source:862-ZH;target:862
+source:142-ZH;target:142
+source:254-ZH;target:254
+source:PERSON-ZH;target:人
+source:PERSONGR-ZH;target:佩松
+source:PM:ASSET:LOCATION:MASTERPM-ZH;target:PM:资产：位置：MASTERPM
+source:SELF:ASSET:LOCATIONS:MASTERPM-ZH;target:SELF:资产：位置：MASTERPM
+source:PO:COMPANY-ZH;target:PO:公司
+source:SELF:VENDOR-ZH;target:自身：供应商
+source:PR:COMPANY-ZH;target:公关：公司
+source:PRECAUTN-ZH;target:预割
+source:PROBLEM-ZH;target:问题
+source:SELF:COMPANIES-ZH;target:自我：公司
+source:QUAL-ZH;target:质量
+source:QUICKREP:ASSET:LOCATION:JOBPLAN:SAFEPLAN:PM-ZH;target:QUICKREP:ASSET:位置：JOBPLAN:SAFEPLAN:PM
+source:SELF:ASSET:LOCATION:JOBPLAN:WOSAFETYPLAN.SAFETYPLAN:CONTRACT:PM-ZH;target:SELF:ASSET:LOCATION:JOBPLAN:WOSAFETYPLAN.SAFETYPLAN:CONTRACT:PM
+source:RECEIPTS-ZH;target:收据
+source:RELEASE:ASSET:LOCATION:JOBPLAN:SAFEPLAN:PM-ZH;target:发布：资产：位置：工作计划：安全计划：PM
+source:RFQ:COMPANY-ZH;target:询价：公司
+source:SELF:RFQVENDOR.COMPANIES-ZH;target:自己：RFQVENDOR.COMPANIES
+source:ROUTES-ZH;target:路线
+source:SAFEPLAN-ZH;target:安全计划
+source:SOLUTION-ZH;target:解决方案
+source:SR-ZH;target:锶
+source:40-ZH;target:40
+source:380-ZH;target:380
+source:TAGLOCKS:ASSET:LOCATION-ZH;target:标记锁：资源：位置
+source:SELF:ASSET:LOCATIONS-ZH;target:自：资源：位置
+source:TKTEMPLATE-ZH;target:模板
+source:TOOL-ZH;target:工具
+source:30000-ZH;target:30000
+source:WOTRACK:ASSET:LOCATION:JOBPLAN:SAFEPLAN:PM-ZH;target:Wotrack:Asset:Location:Jobplan:Safeplan:PM
+source:20-ZH;target:20
+source:10-ZH;target:10
+source:80-ZH;target:80
+source:maximo-ZH;target:最大值
+source:This is a property. The value is maximo for the property mxe.system.reguser-ZH;target:这是一处房产。属性mxe.system.reguser的值为maximo
+source:200-ZH;target:200
+source:TRUE-ZH;target:真的
+source:ASSET:LOCATION-ZH;target:资产：位置
+source:SELF:LOCATION-ZH;target:自我：位置
+source:]-ZH;target:]
+source:CALENDAR-ZH;target:日历
+source:CHANGE:ASSET:LOCATION:JOBPLAN:SAFEPLAN:PM-ZH;target:更改：资产：位置：作业计划：安全计划：PM
+source:COMPANY-ZH;target:公司
+source:COND:ASSET:LOCATION:PM-ZH;target:条件：资产：地点：PM
+source:SELF:ASSET:LOCATION:PM-ZH;target:自身：资产：位置：PM
+source:CRAFT-ZH;target:工艺
+source:CREWTYPE-ZH;target:CREWTYPE公司
+source:2000-ZH;target:2000
+source:FAILURE-ZH;target:失败
+source:HAZARDS-ZH;target:危害
+source:IAS:INVENTOR-ZH;target:国际会计准则：发明人
+source:SELF:INVENTORY-ZH;target:自身：库存
+source:INCIDENT-ZH;target:事故
+source:INVENTOR:HAZARDS-ZH;target:发明人：危险
+source:SELF:HAZARD-ZH;target:自我：危险
+source:INVISSUE-ZH;target:隐形眼镜
+source:INVOICE:PO:COMPANY-ZH;target:发票：PO:公司
+source:SELF:PO:COMPANIES-ZH;target:本人：PO:公司
+source:ITEM-ZH;target:项目
+source:PLUSCLOC-ZH;target:普鲁斯科
+source:The selected date is outside of the work list's date range. Select a date within the work list's start and end dates.-ZH;target:所选日期超出工作列表的日期范围。在工作列表的开始和结束日期内选择一个日期。
+source:Report Usage-JA;target:レポート使用
+source:SLA List-JA;target:SLAリスト
+source:SLA Details-JA;target:SLAの詳細
+source:Service Level Exception-JA;target:サービスレベル例外
+source:Service Desk Contact, Response and Resolution-JA;target:サービスデスクの連絡先、応答、解像度
+source:CI Template-JA;target:CIテンプレート
+source:Summary of Asset Failures by Location-JA;target:立地による資産不良の概要
+source:Maintenance Cost Rollup-JA;target:メンテナンスコスト
+source:Maintenance Cost Rollup Update-JA;target:メンテナンスコスト
+source:Asset Measurement History-JA;target:資産測定履歴
+source:Overall Equipment Effectiveness By Location-JA;target:立地による設備全体の有効性
+source:Overall Equipment Effectiveness By Asset-JA;target:資産による設備全体の有効性
+source:Failure Code Hierarchy-JA;target:故障コード階層
+source:Purchase Order Details Report-JA;target:購入注文詳細レポート
+source:PO Status Details-JA;target:ポーステータス詳細
+source:Report Schedule Limits and Maintenance-JA;target:レポートスケジュールの制限とメンテナンス
+source:Overall Equipment Effectiveness By Site-JA;target:サイトによる機器全体の有効性
+source:Report Usage-ZH;target:报告使用情况
+source:SLA List-ZH;target:SLA列表
+source:SLA Details-ZH;target:SLA详细信息
+source:Service Level Exception-ZH;target:服务级别异常
+source:Service Desk Contact, Response and Resolution-ZH;target:服务台联系、响应和解决方案
+source:CI Template-ZH;target:CI模板
+source:Summary of Asset Failures by Location-ZH;target:按位置列出的资产故障摘要
+source:Maintenance Cost Rollup-ZH;target:维护成本汇总
+source:Maintenance Cost Rollup Update-ZH;target:维护成本汇总更新
+source:Asset Measurement History-ZH;target:资产计量历史
+source:Overall Equipment Effectiveness By Location-ZH;target:按位置划分的总体设备效能
+source:Overall Equipment Effectiveness By Asset-ZH;target:按资产列出的总体设备效能
+source:Failure Code Hierarchy-ZH;target:故障代码层次结构
+source:Purchase Order Details Report-ZH;target:采购订单明细报告
+source:PO Status Details-ZH;target:采购订单状态详细信息
+source:Report Schedule Limits and Maintenance-ZH;target:报告进度限制和维护
+source:Overall Equipment Effectiveness By Site-ZH;target:按站点列出的总体设备有效性
+source:Show Labor MODAVAIL column-JA;target:労働組合コラムを示す
+source:Show Crew MODAVAIL column-JA;target:ショークルー
+source:Show Assignment Dates in Reschedule Dialog.-JA;target:Rescheduleダイアログの割り当て日付を表示します。
+source:Show Work Order Schedule Dates in Reschedule Dialog.-JA;target:Requicheduleダイアログでスケジュールを変更する。
+source:Show Work Order Target Dates in Reschedule Dialog.-JA;target:Rescheduleダイアログでターゲットの日付を表示します。
+source:Show Labor MODAVAIL column-ZH;target:显示人工MODAVAIL列
+source:Show Crew MODAVAIL column-ZH;target:显示机组MODAVAIL列
+source:Show Assignment Dates in Reschedule Dialog.-ZH;target:在“重新安排”对话框中显示分配日期。
+source:Show Work Order Schedule Dates in Reschedule Dialog.-ZH;target:在“重新计划”对话框中显示工单计划日期。
+source:Show Work Order Target Dates in Reschedule Dialog.-ZH;target:在“重新安排”对话框中显示工单目标日期。
+source:Route Workflow-JA;target:ワークフロー
+source:Route Workflow-ZH;target:工艺路线工作流

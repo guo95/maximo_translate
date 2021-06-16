@@ -17,10 +17,11 @@ import java.net.URLEncoder;
  * @date : 2021/6/14 0:17
  * @description : com.maximo.gsl.translate
  */
-public class GoogleTranslate {
+public class GoogleTranslate extends Translate{
 
-    public String translate(String langFrom, String langTo, String word)  {
-        StringBuffer response = null;
+    @Override
+    public String translate(String langFrom, String langTo, String word) throws IOException {
+        StringBuilder response;
         try {
             String url = "https://translate.googleapis.com/translate_a/single?" +
                     "client=gtx&" +
@@ -32,17 +33,17 @@ public class GoogleTranslate {
             con.setRequestProperty("User-Agent", "Mozilla/5.0");
             BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
             String inputLine;
-            response = new StringBuffer();
+            response = new StringBuilder();
             while ((inputLine = in.readLine()) != null) {
                 response.append(inputLine);
             }
             in.close();
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            throw new MalformedURLException("接口网址格式错误\n".concat(e.getMessage()));
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            throw new UnsupportedEncodingException("接口编码异常\n".concat(e.getMessage()));
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new IOException("接口调用异常\n".concat(e.getMessage()));
         }
         return parseResult(response.toString());
 
@@ -51,10 +52,10 @@ public class GoogleTranslate {
     private String parseResult(String inputJson) {
         JSONArray jsonArray = JSONArray.parseArray(inputJson);
         JSONArray jsonArray2 = (JSONArray) jsonArray.get(0);
-        String result ="";
-        for(int i =0;i < jsonArray2.size();i ++){
-            result += ((JSONArray) jsonArray2.get(i)).get(0).toString();
+        StringBuilder result = new StringBuilder();
+        for (Object o : jsonArray2) {
+            result.append(((JSONArray) o).get(0).toString());
         }
-        return result;
+        return result.toString();
     }
 }

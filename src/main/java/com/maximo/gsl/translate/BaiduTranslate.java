@@ -21,10 +21,11 @@ import java.security.NoSuchAlgorithmException;
  * @date : 2021/6/14 15:17
  * @description : com.maximo.gsl.translate
  */
-public class BaiduTranslate {
+public class BaiduTranslate extends Translate{
 
+    @Override
     public String translate(String langFrom, String langTo, String word) throws Exception {
-        StringBuilder response = null;
+        StringBuilder response;
         String appid = "20210614000862591";
         String key = "lMOfkdcsdy0gAoaMpJrW";
         String slat = String.valueOf(System.currentTimeMillis());
@@ -48,11 +49,11 @@ public class BaiduTranslate {
             }
             in.close();
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            throw new MalformedURLException("接口网址格式错误\n".concat(e.getMessage()));
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            throw new UnsupportedEncodingException("接口编码异常\n".concat(e.getMessage()));
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new IOException("接口调用异常\n".concat(e.getMessage()));
         }
         return parseResult(response.toString());
 

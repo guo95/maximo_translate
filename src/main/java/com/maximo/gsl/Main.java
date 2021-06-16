@@ -167,13 +167,33 @@ public class Main extends JFrame{
             String un = userName.getText();
             String pw = passWord.getText();
             String fp = filePath.getText();
+            int jieKou = tran_if.getSelectedIndex();
+            String str_jk;
+            // 接口
+            switch (jieKou) {
+                case 0:
+                    str_jk = "google";
+                    break;
+                case 1:
+                    str_jk = "baidu";
+                    break;
+                case 2:
+                    str_jk = "youDao";
+                    break;
+                case 3:
+                    str_jk = "microsoft";
+                    break;
+                default:
+                    str_jk = "";
+                    break;
+            }
             // ture 时为直接提交
             boolean isCommit = commit.isSelected();
             Db2 db2 = new Db2(ipText, portText, un, pw);
             Connection conn = null;
             try {
                 conn = db2.getConnection();
-                new GenerateInsetSql().generate(new TranslateData(fp).getTranslateData(new OaaData().getOrA(conn), conn), conn, isCommit, fp);
+                new GenerateInsetSql().generate(new TranslateData(fp, str_jk).getTranslateData(new OaaData().getOrA(conn), conn), conn, isCommit, fp);
             } catch (Exception exception) {
                 exception.printStackTrace();
             } finally {

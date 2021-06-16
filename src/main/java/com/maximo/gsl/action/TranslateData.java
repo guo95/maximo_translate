@@ -5,6 +5,8 @@ import com.maximo.gsl.bean.NeedToTranslate;
 import com.maximo.gsl.bean.OaA;
 import com.maximo.gsl.jdbc.Db2;
 import com.maximo.gsl.translate.BaiduTranslate;
+import com.maximo.gsl.translate.GoogleTranslate;
+import com.maximo.gsl.translate.Translate;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,9 +29,10 @@ public class TranslateData {
     private static Map<String, String> MAP;
     private final FileAction fileAction;
 
-    public TranslateData(String filePath) throws IOException {
+    public TranslateData(String filePath, String str_jk) throws IOException {
         this.fileAction = new FileAction(filePath, "map.txt");
         MAP = fileAction.readToMap();
+        this.str_jk = str_jk;
     }
     public List<NeedToTranslate> getTranslateData(List<OaA> oaAS, Connection conn) throws Exception {
         PreparedStatement ps = null;
@@ -110,6 +113,8 @@ public class TranslateData {
                 "                   and a.langcode = b.LANGCODE)";
     }
 
+    private String str_jk;
+
     private String translate(AttrAndTranslate attrAndTranslate, String langCode) throws Exception {
         String str = attrAndTranslate.getNeedTranslateData();
         if (str.isEmpty()) {
@@ -117,10 +122,16 @@ public class TranslateData {
         }
         String value = MAP.get(str.concat("-").concat(langCode));
         if (null == value) {
-//            GoogleTranslate googleTranslate = new GoogleTranslate();
-            BaiduTranslate baiduTranslate = new BaiduTranslate();
+            Translate translate;
+            if ("google".equals(str_jk)) {
+                translate = new GoogleTranslate();
+            } else if ("baidu".equals(str_jk)) {
+                translate = new BaiduTranslate();
+            } else {
+                throw new Exception("当前接口未定义,请选择其他接口");
+            }
             String l = langCode.replace("JA", "jp");
-            String translateStr = baiduTranslate.translate("auto", l, str);
+            String translateStr = translate.translate("auto", l, str);
             MAP.put(str.concat("-").concat(langCode), translateStr);
             fileAction.writeInFile("source:".concat(str).concat("-").concat(langCode).concat(";target:").concat(translateStr));
             return translateStr;

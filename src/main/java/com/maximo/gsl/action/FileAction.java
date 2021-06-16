@@ -21,26 +21,26 @@ public class FileAction {
     private FileOutputStream outStream;
     private BufferedWriter writer;
 
-    public FileAction(String fileName) {
-        this.filePath = file(fileName);
-        this.file = new File(filePath);
+    public FileAction(String filePath, String fileName) throws IOException {
+        this.filePath = file(filePath, fileName);
+        this.file = new File(this.filePath);
         try {
             this.outStream = new FileOutputStream(file, true);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            throw new FileNotFoundException("文件".concat(fileName).concat("没有找到\n").concat(e.getMessage()));
         }
         this.writer = new BufferedWriter(new OutputStreamWriter(outStream, StandardCharsets.UTF_8));
     }
 
-    public void writeInFile(String str) {
+    public void writeInFile(String str) throws IOException {
         try {
             writer.write(str.concat("\n"));
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new IOException("文件写入出错\n".concat(e.getMessage()));
         }
     }
 
-    public void closeFileAction() {
+    public void closeFileAction() throws IOException {
         try {
             if (null != writer) {
                 writer.close();
@@ -49,25 +49,28 @@ public class FileAction {
                 outStream.close();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new IOException("关闭文件出错\n".concat(e.getMessage()));
         }
     }
 
-    public String file(String fileName) {
-        File testFile = new File(System.getProperty("user.dir") + File.separator + "maximo_translate" + File.separator +
-                "src" + File.separator + "main" + File.separator + "resources" + File.separator + fileName);
+    public String file(String filePath, String fileName) throws IOException {
+        File testFile = new File(filePath + File.separator + fileName);
         // 返回的是File类型,可以调用exsit()等方法
         File fileParent = testFile.getParentFile();
         if (!fileParent.exists()) {
             // 能创建多级目录
-            fileParent.mkdirs();
+            if (!fileParent.mkdirs()) {
+                throw new IOException("创建文件夹失败");
+            }
         }
         if (!testFile.exists()) {
             try {
                 //有路径才能创建文件
-                testFile.createNewFile();
+                if (testFile.createNewFile()) {
+                    throw new IOException("创建文件失败");
+                }
             } catch (IOException e) {
-                e.printStackTrace();
+                throw new IOException("创建文件出错\n".concat(e.getMessage()));
             }
         }
         return testFile.getAbsolutePath();
@@ -94,7 +97,7 @@ public class FileAction {
                 // 考虑到编码格式
                 InputStreamReader read = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8);
                 BufferedReader bufferedReader = new BufferedReader(read);
-                String lineTxt = null;
+                String lineTxt;
                 //按行读取
                 while ((lineTxt = bufferedReader.readLine()) != null) {
                     if (!"".equals(lineTxt)) {

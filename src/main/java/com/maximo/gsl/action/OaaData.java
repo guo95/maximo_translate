@@ -15,10 +15,8 @@ import java.util.List;
  */
 public class OaaData {
 
-    public List<OaA> getOrA(){
+    public List<OaA> getOrA(Connection conn) throws SQLException {
         List<OaA> oaAS = new ArrayList<>();
-        Db2 db2 = new Db2("m.shuto.cn", "45000", "maximo", "Guosl@shuto.cn");
-        Connection conn = db2.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
@@ -37,9 +35,9 @@ public class OaaData {
             conn.commit();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new SQLException("获取语言表出错\n"+e.getMessage());
         } finally {
-            new Db2().closeAll(rs, ps, conn);
+            new Db2().closeRsPs(rs, ps);
         }
         return oaAS;
     }

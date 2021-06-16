@@ -1,11 +1,19 @@
 package com.maximo.gsl;
 
+import com.maximo.gsl.action.GenerateInsetSql;
+import com.maximo.gsl.action.OaaData;
+import com.maximo.gsl.action.TranslateData;
+import com.maximo.gsl.jdbc.Db2;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Blob;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
  * @author : guosl
@@ -18,25 +26,23 @@ public class Main extends JFrame{
     // 定义组件
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
-    private JTextField ip,port,userName,passWord,filePath,allInfo;
+    private JTextField ip,port,userName,passWord,filePath;
     private JRadioButton commit,sql;
     private JCheckBox cb1,cb2,cb3;
     private JComboBox<String > tran_if;
+    private JTextArea outMsg;
 
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                try{
-                    Main frame=new Main();     // 创建一个窗口
-                    frame.setVisible(true);                                    // 让该窗口实例可见
-                }catch (Exception e) {
-                    e.printStackTrace();
-                }
+        EventQueue.invokeLater(() -> {
+            try{
+                // 创建一个窗口
+                Main frame=new Main();
+                // 让该窗口实例可见
+                frame.setVisible(true);
+            }catch (Exception e) {
+                e.printStackTrace();
             }
         });
-//      CourseSelectionFrame frame=new CourseSelectionFrame();
-//      frame.setVisible(true);
     }
 
     /**
@@ -78,8 +84,6 @@ public class Main extends JFrame{
         port.setText("50000");
         panel_1.add(port);
 
-
-
         // 第二行
         JPanel panel_2=new JPanel();
         panel.add(panel_2);
@@ -87,6 +91,7 @@ public class Main extends JFrame{
         panel_2.add(label_userName);
         userName=new JTextField();
         panel_2.add(userName);
+        userName.setText("maximo");
         userName.setColumns(10);
         JLabel label_passWord=new JLabel("passWord");
         panel_2.add(label_passWord);
@@ -97,8 +102,8 @@ public class Main extends JFrame{
         // 第三行
         JPanel panel_3=new JPanel();
         panel.add(panel_3);
-        tran_if =new JComboBox<String >();
-        tran_if.setModel(new DefaultComboBoxModel<String>(new String[]{"谷歌","百度","有道","微软"}));
+        tran_if =new JComboBox< >();
+        tran_if.setModel(new DefaultComboBoxModel<>(new String[]{"谷歌","百度","有道","微软"}));
         tran_if.setToolTipText("接口");
         tran_if.setSelectedIndex(1);
         panel_3.add(tran_if);
@@ -136,15 +141,15 @@ public class Main extends JFrame{
         JButton dbTest=new JButton("测试数据库连接");
         panel_5.add(dbTest);
 
-        // 添加选课信息
+        // 添加输出信息
         JPanel panelSouth=new JPanel();
         contentPane.add(panelSouth,BorderLayout.SOUTH);
-        JLabel labe=new JLabel("选课信息");
-        labe.setHorizontalAlignment(SwingConstants.LEFT);
-        panelSouth.add(labe);
-        allInfo=new JTextField();
-        allInfo.setColumns(30);
-        panelSouth.add(allInfo);
+        outMsg = new JTextArea();
+        outMsg.setColumns(42);
+        outMsg.setRows(3);
+        outMsg.setLineWrap(true);
+        panelSouth.add(outMsg);
+
         //添加标题
         JPanel panelNorth=new JPanel();
         contentPane.add(panelNorth,BorderLayout.NORTH);
@@ -154,38 +159,65 @@ public class Main extends JFrame{
         panelNorth.add(labelTitle);
 
         // 给确定按钮添加事件处理代码
-        jbOk.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                StringBuilder info=new StringBuilder();
-                String ipText = ip.getText();
-                String portText = port.getText();
-                String un = userName.getText();
-                String pw = passWord.getText();
-                String theWay;
-                if(commit.isSelected()){
-                    theWay="直接提交";
-                }else {
-                    theWay="导出SQL";
+        jbOk.addActionListener(e -> {
+            long start = System.currentTimeMillis();
+            String msg;
+            String ipText = ip.getText();
+            String portText = port.getText();
+            String un = userName.getText();
+            String pw = passWord.getText();
+            String fp = filePath.getText();
+            // ture 时为直接提交
+            boolean isCommit = commit.isSelected();
+            Db2 db2 = new Db2(ipText, portText, un, pw);
+            Connection conn = null;
+            try {
+                conn = db2.getConnection();
+                new GenerateInsetSql().generate(new TranslateData(fp).getTranslateData(new OaaData().getOrA(conn), conn), conn, isCommit, fp);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            } finally {
+                long end = System.currentTimeMillis();
+                msg = "翻译完成，共耗时".concat(String.valueOf((end-start)/1000)).concat("秒");
+                if (null != conn) {
+                    try {
+                        conn.close();
+                    } catch (SQLException exception) {
+                        exception.printStackTrace();
+                    }
                 }
-                info.append(ipText).append(portText).append(un).append(pw).append(theWay);
-                allInfo.setText(info.toString());
+                outMsg.setText(msg);
             }
         });
 
         // 给重填按钮设置事件处理代码
-        jbRest.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                ip.setText("localhost");
-                port.setText("50000");
-                sql.setSelected(true);
-                filePath.setText("c:\\maximo_translate");
-                tran_if.setSelectedIndex(1);
-                allInfo.setText("");
-            }
+        jbRest.addActionListener(e -> {
+            ip.setText("localhost");
+            port.setText("50000");
+            sql.setSelected(true);
+            filePath.setText("d:\\maximo_translate");
+            tran_if.setSelectedIndex(1);
+            outMsg.setText("");
         });
+
+        // 数据库测试
+        dbTest.addActionListener(e -> {
+            String ipText = ip.getText();
+            String portText = port.getText();
+            String un = userName.getText();
+            String pw = passWord.getText();
+            Db2 db2 = new Db2(ipText, portText, un, pw);
+            String msg;
+            try {
+                Connection conn = db2.getConnection();
+                msg = "数据库连接成功";
+                conn.rollback();
+                conn.close();
+            } catch (SQLException exception) {
+                msg = exception.getMessage();
+            }
+            outMsg.setText(msg);
+        });
+
     }
 }

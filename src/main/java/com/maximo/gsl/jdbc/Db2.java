@@ -10,37 +10,6 @@ import java.sql.*;
  */
 public class Db2 {
 
-    /*public static void main(String[] args) {
-        String jdbcClassName="com.ibm.db2.jcc.DB2Driver";
-        String url="jdbc:db2://m.shuto.cn:45000/maxdb";
-        String user="maximo";
-        String password="Guosl@shuto.cn";
-
-        Connection connection = null;
-        try {
-            //Load class into memory
-            Class.forName(jdbcClassName);
-            //Establish connection
-            connection = DriverManager.getConnection(url, user, password);
-            connection.setAutoCommit(false);
-
-            String sql = "";
-
-
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        } finally{
-            if(connection!=null){
-                System.out.println("Connected successfully.");
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }*/
-
     public Db2(){
     }
 
@@ -57,7 +26,7 @@ public class Db2 {
         this.password = password;
     }
 
-    public Connection getConnection() {
+    public Connection getConnection() throws SQLException {
         String jdbcClassName="com.ibm.db2.jcc.DB2Driver";
         String url=String.format("jdbc:db2://%s:%s/maxdb", ip, port);
         //Load class into memory
@@ -72,13 +41,13 @@ public class Db2 {
             e.printStackTrace();
         } catch (SQLException e) {
             System.out.println("sql connection is error.");
-            e.printStackTrace();
+            throw new SQLException("数据库连接失败\n".concat(e.getMessage()));
         }
 
         return connection;
     }
 
-    public void closeAll(ResultSet rs, PreparedStatement ps, Connection conn) {
+    public void closeRsPs(ResultSet rs, PreparedStatement ps) throws SQLException {
         try {
             if (rs != null) {
                 rs.close();
@@ -86,12 +55,8 @@ public class Db2 {
             if (ps != null) {
                 ps.close();
             }
-            if (conn != null) {
-                conn.rollback();
-                conn.close();
-            }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new SQLException("关闭事务出错\n".concat(e.getMessage()));
         }
     }
 }

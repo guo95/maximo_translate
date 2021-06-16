@@ -3,6 +3,11 @@ package com.maximo.gsl.action;
 import com.maximo.gsl.bean.AttrAndTranslate;
 import com.maximo.gsl.bean.NeedToTranslate;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 /**
@@ -13,38 +18,44 @@ import java.util.List;
  */
 public class GenerateInsetSql {
 
-    public static void main(String[] args) {
-        try {
-            new GenerateInsetSql().generate(new TranslateData().getTranslateData(new OaaData().getOrA()));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void generate(List<NeedToTranslate> needToTranslates) {
-        FileAction fileAction = new FileAction("out.sql");
+    public void generate(List<NeedToTranslate> needToTranslates, Connection conn, boolean isCommit, String filePath) throws SQLException, IOException {
+        FileAction fileAction = new FileAction(filePath, "out.sql");
         fileAction.clearInfoForFile();
         fileAction.writeInFile("-------------------- INSERT INTO LANGUAGE TABLES --------------------");
-        for (NeedToTranslate needToTranslate : needToTranslates) {
-            boolean mark = false;
-            List<AttrAndTranslate> attrAndTranslates = needToTranslate.getAttrAndTranslates();
-            for (AttrAndTranslate attrAndTranslate : attrAndTranslates) {
-                if (!attrAndTranslate.getTranslateData().equals(attrAndTranslate.getNeedTranslateData())) {
-                    mark = true;
-                    break;
+        try (Statement st = conn.createStatement()) {
+            for (NeedToTranslate needToTranslate : needToTranslates) {
+                boolean mark = false;
+                List<AttrAndTranslate> attrAndTranslates = needToTranslate.getAttrAndTranslates();
+                for (AttrAndTranslate attrAndTranslate : attrAndTranslates) {
+                    if (!attrAndTranslate.getTranslateData().equals(attrAndTranslate.getNeedTranslateData())) {
+                        mark = true;
+                        break;
+                    }
+                }
+                if (mark) {
+                    String sql = sql(needToTranslate);
+                    if (isCommit) {
+                        st.addBatch(sql);
+                    } else {
+                        fileAction.writeInFile(sql);
+                    }
                 }
             }
-            if (mark) {
-                String sql = sql(needToTranslate);
-                System.out.println(sql);
-                fileAction.writeInFile(sql);
+            if (isCommit) {
+                st.executeBatch();
+                conn.commit();
             }
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        } finally {
+            fileAction.closeFileAction();
+            conn.rollback();
+            conn.close();
         }
-        fileAction.closeFileAction();
     }
 
     private String sql(NeedToTranslate needToTranslate) {
-        return String.format("insert into %s (%s, OWNERID, %sLANGCODE) VALUES (%s.nextval, %s, %s'%s');",
+        return String.format("insert into %s (%s, OWNERID, %sLANGCODE, ROWSTAMP) VALUES (%s.nextval, %s, %s'%s', MAXROWSTAMPSEQ.nextval);",
                 needToTranslate.getL_objectName(), needToTranslate.getL_objectNameId(), needToTranslate.attrAndTran()[0],
                 needToTranslate.getL_objectNameSeq(), needToTranslate.getOwnerId(), needToTranslate.attrAndTran()[1],
                 needToTranslate.getLangCode());

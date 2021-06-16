@@ -6,6 +6,8 @@ import com.maximo.gsl.bean.OaA;
 import com.maximo.gsl.jdbc.Db2;
 import com.maximo.gsl.translate.BaiduTranslate;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,13 +27,11 @@ public class TranslateData {
     private static Map<String, String> MAP;
     private final FileAction fileAction;
 
-    public TranslateData() {
-        this.fileAction = new FileAction("map.txt");
+    public TranslateData(String filePath) throws IOException {
+        this.fileAction = new FileAction(filePath, "map.txt");
         MAP = fileAction.readToMap();
     }
-    public List<NeedToTranslate> getTranslateData(List<OaA> oaAS) throws Exception {
-        Db2 db2 = new Db2("m.shuto.cn", "45000", "maximo", "Guosl@shuto.cn");
-        Connection conn = db2.getConnection();
+    public List<NeedToTranslate> getTranslateData(List<OaA> oaAS, Connection conn) throws Exception {
         PreparedStatement ps = null;
         ResultSet rs = null;
         List<NeedToTranslate> needToTranslates = new ArrayList<>();
@@ -83,9 +83,9 @@ public class TranslateData {
             }
             fileAction.closeFileAction();
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new SQLException("获取需翻译数据出错\n"+e.getMessage());
         } finally {
-            new Db2().closeAll(rs, ps, conn);
+            new Db2().closeRsPs(rs, ps);
         }
         return needToTranslates;
     }

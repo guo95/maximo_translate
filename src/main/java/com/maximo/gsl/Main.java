@@ -178,7 +178,7 @@ public class Main extends JFrame{
                     str_jk = "baidu";
                     break;
                 case 2:
-                    str_jk = "youDao";
+                    str_jk = "youdao";
                     break;
                 case 3:
                     str_jk = "microsoft";

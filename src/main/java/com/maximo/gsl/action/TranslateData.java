@@ -29,9 +29,12 @@ public class TranslateData {
     private static Map<String, String> MAP;
     private final FileAction fileAction;
 
-    public TranslateData(String filePath, String str_jk) throws IOException {
+    public TranslateData(String filePath, String str_jk) throws Exception {
         this.fileAction = new FileAction(filePath, "map.txt");
         MAP = fileAction.readToMap();
+        if (!"google".equals(str_jk) && !"baidu".equals(str_jk)) {
+            throw new Exception("当前接口未定义,请选择其他接口");
+        }
         this.str_jk = str_jk;
     }
     public List<NeedToTranslate> getTranslateData(List<OaA> oaAS, Connection conn) throws Exception {

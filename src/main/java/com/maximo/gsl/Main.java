@@ -127,7 +127,7 @@ public class Main extends JFrame{
         panel_4.add(label_3);
         filePath=new JTextField();
         panel_4.add(filePath);
-        filePath.setText("c:\\maximo_translate");
+        filePath.setText("d:\\maximo_translate");
         filePath.setColumns(30);
 
         // 第五行
@@ -161,7 +161,7 @@ public class Main extends JFrame{
         // 给确定按钮添加事件处理代码
         jbOk.addActionListener(e -> {
             long start = System.currentTimeMillis();
-            String msg;
+            String msg = "";
             String ipText = ip.getText();
             String portText = port.getText();
             String un = userName.getText();
@@ -194,15 +194,17 @@ public class Main extends JFrame{
             try {
                 conn = db2.getConnection();
                 new GenerateInsetSql().generate(new TranslateData(fp, str_jk).getTranslateData(new OaaData().getOrA(conn), conn), conn, isCommit, fp);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            } finally {
                 long end = System.currentTimeMillis();
                 msg = "翻译完成，共耗时".concat(String.valueOf((end-start)/1000)).concat("秒");
+            } catch (Exception exception) {
+                msg = exception.getMessage();
+                exception.printStackTrace();
+            } finally {
                 if (null != conn) {
                     try {
                         conn.close();
                     } catch (SQLException exception) {
+                        msg = exception.getMessage();
                         exception.printStackTrace();
                     }
                 }

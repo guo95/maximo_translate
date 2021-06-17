@@ -153,7 +153,7 @@ public class Main extends JFrame{
         //添加标题
         JPanel panelNorth=new JPanel();
         contentPane.add(panelNorth,BorderLayout.NORTH);
-        JLabel labelTitle=new JLabel("一丰项目英文翻译为中文日文");
+        JLabel labelTitle=new JLabel("一丰项目英文翻译为中文日文 V1.0");
         labelTitle.setForeground(Color.DARK_GRAY);
         labelTitle.setFont(new Font("宋体", Font.BOLD, 20));
         panelNorth.add(labelTitle);
